@@ -1,0 +1,47 @@
+@import 'variables';
+
+// Greybar Section
+.greybar {
+  width: 100%;
+  height: 90px;
+  background: $grey-background;
+  clear: both;
+  padding-top: 30px;
+}
+
+// Footer Section
+@include footer(100%, 120px, $background-color);
+
+// Social Media Links
+.social-media {
+  margin: 0 auto;
+  width: 165px;
+
+  div {
+    float: left;
+    margin-right: 5px;
+  }
+
+  a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999px;
+  }
+
+  .one {
+    background: url($social-media-icon) 0 0;
+  }
+
+  .two {
+    background: url($social-media-icon) -38px 0;
+  }
+
+  .three {
+    background: url($social-media-icon) -76px 0;
+  }
+
+  .four {
+    background: url($social-media-icon) -114px 0;
+  }
+}

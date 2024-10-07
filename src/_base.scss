@@ -1,0 +1,89 @@
+@import 'variables';
+
+/* BASIC STYLES */
+main {
+    @include responsiveMain(940px, 0 auto, 0 10px); 
+}
+
+/* CONTENT */
+#headline {
+    width: 100%;
+    height: 130px;
+    background: $headline-background;
+    text-align: center;
+    margin: 0 auto;
+
+    h1 {
+        color: $headline-text-color;
+        font-size: 2.5em;
+        font-weight: 100;
+        padding-top: 50px;
+    }
+}
+
+#content {
+    @include contentContainer(940px, 20px auto); 
+
+    h3 {
+        color: $content-h3-color;
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    #products {
+        width: 460px;
+        float: left;
+
+        img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        article {
+            margin-bottom: 40px;
+        }
+
+        h4 {
+            line-height: 1em;
+        }
+    }
+
+    #testimonials {
+        width: 460px;
+        float: right;
+    }
+}
+
+// Using the break mixin for responsive styles
+@include break(959px) {
+    main {
+        @include responsiveMain(768px);
+    }
+
+    #content #products,
+    #content #testimonials {
+        @include contentContainer(46%, 20px auto);
+    }
+}
+
+@include break(767px) {
+    main {
+        @include responsiveMain(460px);
+    }
+
+    #content #products,
+    #content #testimonials {
+        @include contentContainer(96%, 0 2%);
+        float: none; 
+    }
+}
+
+@include break(459px) {
+    main {
+        @include responsiveMain(300px);
+    }
+
+    #content h3 {
+        font-size: 1.6em; 
+    }
+}
